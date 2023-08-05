@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<!--the Home page-->
+<section id="banner">
+    <img src="static/images/logo.png" class="logo">
+    <div class="banner-text">
+        <h1>Welcome To<br>BioCycle</h1>
+        <p>Advancing Zero Waste Solutions</p>
+        <div class="banner-btn">
+            <a href="login"><span></span>Login</a>
+            <a href="sign-up"><span></span>Sign-up</a>
+        </div>
+    </div>
+</section>
+<div id="sideNav">
+    <nav>
+        <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="about">ABOUT</a></li>
+            <li><a href="get_started">GET STARTED</a></li>
+            <li><a href="#testimonials">PREVIOUS MAPPERS</a></li>
+            <li><a href="contact">CONTACT US</a></li>
+        </ul>
+    </nav>
+</div>
+<div id="menuBtn">
+    <img src="/static/images/menu.png" id="menu">
+</div>
+{% endblock %}

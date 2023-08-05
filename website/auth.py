@@ -4,7 +4,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from . import db   ##means from __init__.py import db
 from flask_login import login_user, login_required, logout_user, current_user
 auth = Blueprint('auth', __name__)
-auth.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
@@ -17,7 +16,7 @@ def login():
             if check_password_hash(user.password, password):
                 flash('Logged in successfully!', category='success')
                 login_user(user, remember=True)
-                return redirect(url_for('views.home'))
+                return redirect(url_for('views.get_started'))
             else:
                 flash('Incorrect password, try again.', category='error')
         else:

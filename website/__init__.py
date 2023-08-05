@@ -1,4 +1,5 @@
 from flask import Flask
+from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 
@@ -21,6 +22,14 @@ def create_app():
 
     from .models import User 
 
+    login_manager = LoginManager(app)  # Initialize LoginManager
+    login_manager.login_view = 'auth.login'
+
+    # Define the user_loader callback to load a user object based on its ID
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
+        
     create_database(app)
 
     return app

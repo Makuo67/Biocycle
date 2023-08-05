@@ -5,9 +5,10 @@ from os import path
 
 db = SQLAlchemy()
 
-app = Flask(__name__)
+
 
 def create_app():
+    app = Flask(__name__)
     app.config['SECRET KEY'] = 'lorem ipsum'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://okeke:abcd@localhost/biocycle'
     app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
